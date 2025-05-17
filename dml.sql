@@ -57,41 +57,10 @@ INSERT INTO mantenimiento(id_espacio, id_emp, fecha)
 VALUES (5, 6 , '16/05/25');
 
 
---Para ordenar los espacios con los vehículos e información de cada uno: 
-SELECT
-  esp.id_espacio AS parking,
-  esp.estado AS estado,
-  v.matricula AS placa,
-  v.marca AS marca,
-  v.modelo AS modelo,
-  c.nombre AS nombre,
-  c.apellido AS apellido,
-  c.telefono AS telefono,
-  emp.id_emp AS oficial,
-  emp.nombre_emp AS nombre_oficial,
-  emp.apellido_emp AS apellido_oficial
-FROM
-  espacios esp
-JOIN
-  vehiculo v ON esp.id_vehiculo = v.id_vehiculo
-JOIN
-  clientes c ON v.id_client = c.id_client
-JOIN
-  relacioncli r ON r.id_client = c.id_client
-JOIN
-  empleados emp ON r.id_emp = emp.id_emp
-ORDER BY
-  esp.id_espacio;
+--Para ver la tabla del parking:
+SELECT * FROM vista_parkin;
 
 
 --Para acceder al historial de mantenimientos:
-SELECT
-  m.id_espacio AS espacio,
-  m.id_emp AS personal,
-  emp.nombre_emp AS nombre_personal,
-  emp.apellido_emp AS apellido_personal,
-	m.fecha AS fecha
-FROM
-  mantenimiento m
-LEFT JOIN
-  empleados emp ON m.id_emp = emp.id_emp;
+SELECT * FROM vista_mantenimiento;
+
