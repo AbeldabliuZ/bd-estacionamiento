@@ -38,7 +38,7 @@ CREATE TABLE espacios (
 
 -- TABLA RELACION  CLIENTE-EMPLEADO
 CREATE TABLE relacioncli (
-    id_relacion SERIAL PRIMARY KEY,
+    nro_contrato SERIAL PRIMARY KEY UNIQUE,
     id_client INT,
     id_emp INT,
     FOREIGN KEY (id_client) REFERENCES clientes(id_client),
