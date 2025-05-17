@@ -1,5 +1,6 @@
 CREATE TYPE estado_espacio AS ENUM ('ocupado', 'libre');
-
+ALTER TABLE relacioncli
+ALTER COLUMN nro_contrato SET DEFAULT floor(random() * 1000000);
 --TABLA CLIENTE
 CREATE TABLE clientes (
     id_client SERIAL PRIMARY KEY,
