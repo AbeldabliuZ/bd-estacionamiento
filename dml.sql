@@ -35,7 +35,7 @@ VALUES(6, 5);
 
 
 
---asignar un espacio al vehiculo del nuevo cliente
+--asignar un espacio a un vehiculo 
 update espacios
 set estado='ocupado', id_vehiculo=7
 where id_espacio=8;
